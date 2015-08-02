@@ -161,7 +161,7 @@ Template.home.rendered = function() {
       // console.log("As of " + latest.date + ": " + latest.value);
       d3.select(latestElemId)
         .append('text')
-        .text(Math.round(latest.value * 100) / 100 + " as of " + latest.date);
+        .text("Last updated "  + latest.date + " (" + Math.round(latest.value * 100) / 100 + ")");
     }
   }
   function getData(sym, elemId, latestElemId, bullRange, bearRange) {
