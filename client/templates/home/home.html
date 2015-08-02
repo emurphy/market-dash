@@ -1,13 +1,25 @@
 <template name="home">
+  <style>
+    .axis {
+      font: 0.7em arial;
+    }
+    path {
+      fill:none;
+      stroke:black;
+      stroke-width:2px;
+    }
+    .tick {
+      fill:none;
+      stroke:black;
+    }
+    .line {
+      stroke:steelblue;
+      opacity:50;
+    }
+
+  </style>
   <div class="template-home">
-    <h3>Welcome to Project Title</h3>
-    <div class="card-panel">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-    </div>
+    <h4>S&P Price-to-Earnings Ratio (PE10 or CAPE)</h4>
+    <div class="card-panel" id="sp-pe10"> </div>
   </div>
 </template>

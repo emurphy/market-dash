@@ -20,6 +20,7 @@ check@1.0.6-plugins.0
 cmather:handlebars-server@0.2.0
 coffeescript@1.0.7-plugins.1
 cunneen:mailgun@0.9.1
+d3js:d3@3.5.5
 dburles:collection-helpers@1.0.3
 dburles:factory@0.3.10
 ddp@1.2.0-plugins.0
