@@ -1,6 +1,8 @@
 Template.home.rendered = function() {
   var margin = 20,
-    width = 700 - margin,
+    screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width,
+    chartWidth = screenWidth > 700 ? 700 : screenWidth,
+    width = chartWidth - margin,
     height = 300 - margin;
 
   function drawRecessions(recessions, elem, date_parse, x, y) {
