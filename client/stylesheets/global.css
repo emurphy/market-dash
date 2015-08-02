@@ -4,6 +4,11 @@
 
 nav {
   margin-bottom: 24px;
+  background-color: #000000;
+}
+
+footer {
+  background-color: #000000;
 }
 
 ul.side-nav li a {

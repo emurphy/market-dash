@@ -1,5 +1,5 @@
 Template.home.rendered = function() {
-  var margin = 40,
+  var margin = 20,
     width = 700 - margin,
     height = 300 - margin;
 
@@ -61,7 +61,7 @@ Template.home.rendered = function() {
       .attr("opacity", 0.3);
   }
 
-  function draw(data, elemId, date_parse, bearRange, bullRange, latest) {
+  function draw(data, elemId, latestElemId, date_parse, bearRange, bullRange, latest) {
     data.forEach(function(d) {
       d.date = date_parse(d.date);
     });
@@ -157,19 +157,14 @@ Template.home.rendered = function() {
       .attr('x', 90)
       .attr('y', 0);
 
-    d3.select(elemId).select('svg')
-      .append('text')
-      .text('Sources: Robert Shiller, Crestmont Research and Federal Reserve Bank of St. Louis')
-      .attr("transform", "translate(" + width / 5 + "," + (height + margin - 2) + ")");
-
     if (latest && typeof latest !== 'undefined') {
       // console.log("As of " + latest.date + ": " + latest.value);
-      d3.select(elemId)
+      d3.select(latestElemId)
         .append('text')
         .text(Math.round(latest.value * 100) / 100 + " as of " + latest.date);
     }
   }
-  function getData(sym, elemId, bullRange, bearRange) {
+  function getData(sym, elemId, latestElemId, bullRange, bearRange) {
     var path = 'fred?sym=' + sym;
     var parse = d3.time.format("%Y-%m-%d").parse;
     if (sym === 'sp_pe10') {
@@ -178,10 +173,10 @@ Template.home.rendered = function() {
     }
 
     d3.json("/" + path, function(data){
-      draw(data.observations, elemId, parse, bullRange, bearRange, data.latest);
+      draw(data.observations, elemId, latestElemId, parse, bullRange, bearRange, data.latest);
     });
   }
 
-  getData("sp_pe10", "#sp-pe10", [0,10], [20,45]);
+  getData("sp_pe10", "#sp-pe10", "#latest-sp-pe10", [0,10], [20,45]);
 
 };
