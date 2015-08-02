@@ -7,14 +7,14 @@ nav {
   background-color: #000000;
 }
 
-footer {
-  background-color: #000000;
-}
-
 ul.side-nav li a {
   line-height: 44px;
   padding: 24px;
   display: block;
+}
+
+footer.page-footer {
+  background-color: #000000;
 }
 
 ul.side-nav li {
